@@ -1,0 +1,35 @@
+<html>
+<head>
+<title> Score card </title>
+</head>
+<body>
+    <script> 
+       function subMarks(){
+        var Maths,Eng,Sci,Evs,Pun;
+        Maths=parseInt(document.getElementById("sub1").value);
+        Eng=parseInt(document.getElementById("sub2").value);
+        Sci=parseInt(document.getElementById("sub3").value);
+        Evs=parseInt(document.getElementById("sub4").value);
+        Pun=parseInt(document.getElementById("sub5").value);
+        var per = (Maths+Eng+Sci+Evs+Pun)/5;
+        
+
+        document.getElementById("res").innerHTML="The percent marks are "+per;
+        /*document.write("the total marks scored"); */
+       }
+    </script>
+    
+<form>
+Maths :   <input type='text'  name=t1 id="sub1"><br><br><br>
+Eng :    <input type='text'  name=t2 id="sub2"><br><br><br>
+Sci :    <input type='text'  name=t3 id="sub3"><br><br><br>
+Evs :    <input type='text'  name=t4 id="sub4"><br><br><br>
+Pun :    <input type='text'  name=t5 id="sub5"><br><br><br>
+
+<input type='button' value='Check' onClick="subMarks()">
+</form>
+<p id="res"> 
+
+</p>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<html>
+<head>
+<title> Website 2 </title>
+</head>
+<body>
+<marquee direction='right' behavior='scroll'> MARQUEE </marquee>
+</body>
+</html>

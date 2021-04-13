@@ -1,7 +1,143 @@
 <html>
-    <head></head>
+    <head>
+        <style>
+        @media only screen and  (max-width:500px){
+          img{
+              width: 300px !important;
+              height: 500px !important;
+          }  
+          body{
+              background-color:floralwhite !important;
+          }
+          [class*="col-"]{
+              height : "80%";
+              width : "80%";
+          }
+        }
+        img{
+             border-radius:4px;  
+             padding: 5px;
+             width: 350px;
+             border: solid black 5px !important;
+        }
+        h1{
+             text-align :centre;
+         }
+        table , th , td{
+            border : 1px solid rgb(0, 0, 0);
+            border-collapse : collapse;
+        }
+        tr{
+            text-align: center;
+        }
+        tr:nth-child(even){
+            background-color:darkgray;
+        }
+        tr:nth-child(odd){
+            background-color: burlywood;
+        }
+        
+        .hover tr:hover{
+            background-color: black;
+            color:white;
+           
+        }
+        .spacer{
+            min-height:50px;
+        }
+        .overlay{
+            background-color: black;
+            opacity: 50%;
+            min-height: 450px;
+            width: 500px;
+            color:white !important;
+            text-align: center;
+            margin : auto;
+            /* bottom : 0; */
+            left : 50%;
+            right :50%;
+            
+        }
+        .heading{
+            margin-top: 200px;
+            color:rgb(255, 255, 255);
+            font-size: 70px;
+            font-weight: bold;
+        }
+    
+        </style>
+    </head>
+
     <title> first github</title>
+     <!-- Latest compiled and minified CSS -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+     <!-- jQuery library -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ 
+     <!-- Latest compiled JavaScript -->
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
     <body>
-        <h1> twinkle</h1>
-    </body>
-</html>
+     <div class= "container-fluid" style="background-image: url(./img/slider.jpg);width: 1360px;height:520;background-size: cover;background-position: right;">
+         <div class= "overlay">
+            <h1 class="heading"> Heading Info </h1>
+             <p> creation started.</p>
+         </div>
+     </div>       
+     <div class = "spacer"></div><!--For insertion of spaces betwenn the diffrent rows-->
+     <div class="container">
+         <h1 text-align:centre> Introduction</h1>
+         <div class="row">
+             <!-- Beginning -->
+             <div class ="col-sm-4"> <img src="./img/1c.jpg"><br><br> </div>
+             <div class ="col-sm-4"> <p> This webpage deals with writing of blogs and posts.</p> </div>
+             <div class= "col-sm-2"> </div>
+        </div>
+          <h1> Gallery</h1> 
+        <div class="row">
+            <div class ="col-sm-4"> <img src=" ./img/2c.jpg"> </img> </div>
+            <div class ="col-sm-4"> <img src="./img/3c.jpg"> </img> </div>
+            <div class= "col-sm-2"> <img src="./img/4c.jpg"> </img> </div>
+        </div>
+    </div>
+    <div class="spacer"></div>
+    <h1> More information</h1>
+    <div class="container row">
+        <div class="col-sm-2"><img src="./img/1c.jpg"> </img><br><br><br></div>
+        <div class="col-sm-4">  </div>
+        <div class="col-sm-4"> <p style="margin-right:50px"> About the webpage conataining a variety of images</p><br><br> </div>
+    </div>
+    <div class= "container">
+        <div class= "jumbotron" style="background-color:black; color:white;">
+            <h1> CONCLUSION </h1>
+            <p> Thanks for visiting</p>
+        </div>
+    </div>
+
+    <a href="https://www.google.com" target="_blank"> OPEN GOOGLE</a>
+    <table width = "100% " border-collapse = collapse class= hover >
+        <tr>
+            <th> Days </th>
+            <td> 1 </td>
+            <td> 2 </td>
+            <td> 3 </td>
+            <td> 4 </td>
+        </tr>
+        <tr> 
+            <th>Mon </th>
+            <td colspan=2 > Eng </td>
+            <td> Hin </td> 
+            <td rowspan =2> Maths </td>
+        </tr>
+        <tr> 
+            <th> Tues</th>
+            <td> Eng </td>
+            <td>  Hin </td>
+            <td> Maths </td>
+             
+        </tr>
+      
+    </table>
+ </body>
+ </html>

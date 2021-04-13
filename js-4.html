@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> DISPLAY DATA</title>
+        <style>
+            .displayTable{
+                border-collapse: collapse;
+                border: solid 1px black;
+            }
+            .displayTable tr,td,th{
+                border-collapse: collapse;
+                border: solid 1px black;
+                padding:10px;
+            }
+            .green{
+                color:green !important;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body onload="load();">
+        <div id="data"></div>
+
+        <p id="demo"> </p>
+
+    <script type="text/javascript">
+        let names=["A","B","C"];
+        let age=[5,12,14];
+        let gender=['M','F','F'];
+        let maths=[34,65,54];
+        let science=[66,87,65];
+        let total_marks=[];
+        for(var m =0;m<maths.length;m++){
+           
+               
+                total_marks [m]=maths[m]+science[m];
+        }
+        let percent_ =[];
+        for(var n=0;n<maths.length;n++){
+            percent_[n]=(maths[n]+science[n])/2;
+        }
+        
+        const load = function(){
+        var div= document.getElementById("data");
+        var table= document.createElement("table");
+        var tableRow= document.createElement("tr");
+        var tableHeaderCol1= document.createElement("th");
+        var tableHeaderCol2= document.createElement("th");
+        var tableHeaderCol3= document.createElement("th");
+        var tableHeaderCol4= document.createElement("th");
+        var tableHeaderCol5= document.createElement("th");
+        var tableHeaderCol6= document.createElement("th");
+        var tableHeaderCol7= document.createElement("th");
+        
+        table.classList.add("displayTable"); /* Adding style to the table using display table class*/
+
+        tableHeaderCol1.innerHTML='Name'; /* For the first row headings */
+        tableHeaderCol2.innerHTML='Age';
+        tableHeaderCol3.innerHTML='Gender';
+        tableHeaderCol4.innerHTML='Math Marks';
+        tableHeaderCol5.innerHTML='Science Marks';
+        tableHeaderCol6.innerHTML='Total Marks'; 
+        tableHeaderCol7.innerHTML='Average'; 
+
+
+        tableRow.appendChild(tableHeaderCol1);/* for placing the value in the columns */
+        tableRow.appendChild(tableHeaderCol2);
+        tableRow.appendChild(tableHeaderCol3);
+        tableRow.appendChild(tableHeaderCol4);
+        tableRow.appendChild(tableHeaderCol5);
+        tableRow.appendChild(tableHeaderCol6);
+        tableRow.appendChild(tableHeaderCol7);
+
+        /* Display of JSON begins , OBJECTS IN JAVASCRIPT */
+        var text= '{ "marks" :[ '+
+        '{ "name" : "anik ", "rollno": "12", "maths":56},'+
+        '{ "name" : "mohak" , "rollno": "11", "maths":64},'+
+        '{"name ": "prish" , "rollno" : "15" , "maths":54} ] }';
+        
+    
+       obj =JSON.parse(text);
+        document.getElementById("demo").innerHTML=
+        obj.marks[1].name+ "  "+obj.marks[1].rollno;
+        console.log(obj);   
+
+        /* End of the object */
+
+        table.appendChild(tableRow);
+        div.appendChild(table);
+        var tableDataCol1, tableDataCol2, tableDataCol3, tableDataCol4, tableDataCol5, tableDataCol6,tableDataCol7;
+        var max=0,index;
+        
+        for(var i=0; i < names.length; i++) {
+            tableRow=document.createElement("tr");
+            tableRow.id = "row_"+(i+1); /* Since the first row is already updated */
+            tableDataCol1=document.createElement("td");
+           
+            tableDataCol1.innerHTML=names[i];
+            tableDataCol2=document.createElement("td");
+           
+           tableDataCol2.innerHTML=age[i];
+            tableDataCol3=document.createElement("td");
+             
+             tableDataCol3.innerHTML=gender[i];
+            tableDataCol4=document.createElement("td");
+  
+           tableDataCol4.innerHTML=maths[i];
+            tableDataCol5=document.createElement("td");
+
+          tableDataCol5.innerHTML=science[i];
+            tableDataCol6=document.createElement("td");
+     
+            tableDataCol6.innerHTML=maths[i]+science[i]; 
+            tableDataCol7=document.createElement("td");
+         
+           tableDataCol7.innerHTML=(maths[i]+science[i])/2;
+            tableRow.appendChild(tableDataCol1); /* for placing the array values in the column */
+            tableRow.appendChild(tableDataCol2);
+            tableRow.appendChild(tableDataCol3);
+            tableRow.appendChild(tableDataCol4);
+            tableRow.appendChild(tableDataCol5);
+            tableRow.appendChild(tableDataCol6); 
+            tableRow.appendChild(tableDataCol7); 
+            table.appendChild(tableRow);
+            
+            if(max<percent_[i]){
+                max=percent_[i];
+                index=i;
+            }
+           
+            
+        }
+        console.log("the highest marks are scored by "+names[index]);
+        document.getElementById("row_"+(index+1)).classList.add("green");
+
+    }
+    </script>
+    </body>
+</html>
